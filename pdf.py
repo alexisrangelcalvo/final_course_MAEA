@@ -18,6 +18,7 @@ def get_index(data, index_name):
 
 
 pdf_path = os.path.join("data", "SurvivalAnalysis.pdf")
+#pdf_path = os.path.join("data", "Canada.pdf")
 sa_pdf = PDFReader().load_data(file=pdf_path)
 sa_index = get_index(sa_pdf, "sa")
 sa_engine = sa_index.as_query_engine()

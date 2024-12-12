@@ -1,0 +1,7 @@
+Calculate the average of the 'Customer Age' column in the Bank Churned dataset.
+Find the Customer Age for CLIENTNUM 768805383
+The BankChurners dataset is a synthetic dataset that simulates customer churn in the banking industry. It contains information about customers, their transactions, and whether they have churned or not.
+Calculate the average for the Customer_Age column in the Bank Churned dataset.
+Survival analysis is a branch of statistics that deals with predicting the time until an event of interest occurs. It is commonly used in medical research, engineering, and social sciences to analyze the time until an event happens, such as death, failure, or customer churn.
+Survival analysis is a branch of statistics that deals with analyzing time-to-event data. It is commonly used in medical research, engineering, and social sciences to study the time until an event of interest occurs.
+Survival analysis is used in various ways such as predicting customer churn, analyzing time until an event of interest, studying medical outcomes, assessing the effectiveness of treatments, and evaluating the lifetime of mechanical components.

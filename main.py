@@ -10,18 +10,16 @@ from llama_index.tools.function_tool import FunctionTool
 #from llama_index.core.tools import FunctionTool
 #from llama_index.tools import Tool
 from llama_index.llms import OpenAI
-from pdf import canada_engine
-from tools_etc import create_average_metric_tool
+from pdf import sa_engine
+from tools_etc import create_average_metric_tool, describe_csv
 
 
-# TO SET THE API KEY BY TERMINAL
-#export OPENAI_API_KEY="***REMOVED***"
-# ESTO SE TIENE QUE ELIMINAR ANTES DE HACER UN COMMIT, DE LO CONTRARIO LO RECHAZARA GITHUB
 
 
 load_dotenv() # ¿Esto para qué se utiliza?
 
-csv_path = os.path.join("data", "population.csv")
+#csv_path = os.path.join("data", "population.csv")
+csv_path = os.path.join("data", "BankChurners.csv")
 csv_df = pd.read_csv(csv_path)
 
 df_query_engine = PandasQueryEngine(
@@ -44,11 +42,16 @@ tools = [
         ),
     ),
     QueryEngineTool(
-        query_engine=canada_engine,
+        query_engine=sa_engine,
         metadata=ToolMetadata(
             name="canada_data",
             description="this gives detailed information about canada the country",
         ),
+    ),
+    FunctionTool.from_defaults(
+        fn=describe_csv,
+        name="pandas_describe",
+        description="Devuelve estadísticas descriptivas de un archivo CSV."
     ),
     average_metric_tool
 ]
